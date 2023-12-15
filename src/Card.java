@@ -32,17 +32,17 @@ public class Card {
 
     private void calculateScore() {
         int totalledScore = 0;
-        int winningCardCount = 0;
         for (int num: numbers) {
             for (int winningNum: winningNumbers) {
                 if (num == winningNum) {
-                    winningCardCount++;
+                    if (totalledScore == 0) {
+                        totalledScore = 1;
+                    } else {
+                        totalledScore *= 2;
+                    }
                     break;
                 }
             }
-        }
-        for (int i = cardNum; i < cardNum+winningCardCount; i++) {
-            Main.cards.add(Main.cards.get(i));
         }
         score = totalledScore;
     }

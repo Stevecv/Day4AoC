@@ -8,8 +8,9 @@ public class Main {
     public static void main(String[] args) {
         int total = 0;
         for (int i = 0; i < cards.size(); i++) {
-            new Card(cards.get(i));
+            Card card = new Card(cards.get(i));
+            total += card.score;
         }
-        System.out.println(cards.size());
+        System.out.println(total);
     }
 }
